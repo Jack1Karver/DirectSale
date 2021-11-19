@@ -30,8 +30,7 @@ contract DirectSale {
 
 
     constructor(
-        address _addrOwner,
-        address _addrRoot,
+        address _addrOwner,        
         uint128 _internalMessageFee, 
         uint128 _walletPerc,
         address _addrMarket) public {
@@ -40,6 +39,7 @@ contract DirectSale {
        internalMessageFee = _internalMessageFee;
        bought = false;
        endUnixTime = now;
+       addrRoot = msg.sender;
        walletPerc = _walletPerc;
        addrMarket = _addrMarket;      
        tvm.accept();
